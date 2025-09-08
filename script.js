@@ -15,6 +15,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Reveal on scroll
+// Reveal on scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -24,4 +25,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.2 });
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+// Only observe elements you actually use
+document.querySelectorAll(".reveal, .card, .socials a")
+  .forEach(el => observer.observe(el));
+
