@@ -5,81 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yagnik N. Patel | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">Yagnik</div>
+  <!-- Navigation -->
+  <header class="glass navbar">
+    <h1 class="logo">Yagnik N. Patel</h1>
     <nav>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
+      <button id="darkToggle">🌙</button>
     </nav>
-    <button id="theme-toggle">🌙</button>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="reveal">Hi, I'm <span>Yagnik N. Patel</span></h1>
-      <p class="reveal">ICT Engineer • Explorer • DSA </p>
-      <a href="#projects" class="btn reveal">View My Work</a>
-    </div>
+  <!-- Hero Section -->
+  <section class="hero glass reveal">
+    <h2>Hello, I’m <span class="highlight">Yagnik</span></h2>
+    <p>ICT Engineer • Explorer • Designer • Developer</p>
+    <a href="#contact" class="btn">Let’s Connect</a>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section glass">
-    <h2 class="reveal">About Me</h2>
-    <p class="reveal">
-      I'm Yagnik, a first-year engineering student passionate about C++, Data Structures,
-      and solving real-world problems. I love exploring new tech, photography,
-      and building creative projects.
+  <!-- About -->
+  <section id="about" class="glass reveal">
+    <h2>About Me</h2>
+    <p>
+      I am an ICT Engineer passionate about C++, DSA, design, and photography.  
+      I enjoy creating smooth, premium experiences both in tech and art.  
     </p>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section glass">
-    <h2 class="reveal">Projects</h2>
-    <div class="projects-grid">
-      <div class="card reveal">
-        <h3>MYOSA</h3>
-        <p>A creative project showcasing my ICT engineering skills.</p>
-      </div>
-      <div class="card reveal">
-        <h3>QR Code Generator</h3>
-        <p>A C++ tool that generates custom QR codes efficiently.</p>
-      </div>
-      <div class="card reveal">
-        <h3>Snake Game</h3>
-        <p>Console-based Snake game with music, levels & smooth rendering.</p>
-      </div>
+  <!-- Skills -->
+  <section id="skills" class="glass reveal">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">C++</div>
+      <div class="skill">DSA</div>
+      <div class="skill">Photography</div>
+      <div class="skill">Web Design</div>
     </div>
   </section>
 
-  <!-- RESUME -->
-  <section id="resume" class="section glass">
-    <h2 class="reveal">Resume</h2>
-    <p class="reveal">Download my latest resume below:</p>
-    <a href="Yagnik_Patel_Resume.pdf" class="btn reveal" download>📄 Download Resume</a>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section glass">
-    <h2 class="reveal">Connect with Me</h2>
-    <div class="socials reveal">
-      <a href="https://x.com/" target="_blank">🐦 X (Twitter)</a>
-      <a href="https://www.linkedin.com/in/yagnik-n-patel" target="_blank">💼 LinkedIn</a>
-      <a href="mailto:yagnikptl22@gmail.com">✉️ Email</a>
+  <!-- Projects -->
+  <section id="projects" class="glass reveal">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">🎮 Snake Game in C++</div>
+      <div class="card">🔳 QR Code Generator</div>
+      <div class="card">🌐 MYOSA</div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Yagnik N. Patel. Made with ❤️</p>
+  <!-- Resume -->
+  <section id="resume" class="glass reveal">
+    <h2>Resume</h2>
+    <p>You can view or download my resume below:</p>
+    <a href="Yagnik-Patel-CV_v2.pdf" class="btn" target="_blank">📄 View Resume</a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="glass reveal">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+    <div class="socials">
+      <a href="https://x.com/theiYags" target="_blank">X</a>
+      <a href="https://linkedin.com/in/yagnik-n-patel" target="_blank">LinkedIn</a>
+      <a href="mailto:yagnikptl22@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <footer class="glass">
+    <p>© 2025 Yagnik N. Patel</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
