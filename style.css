@@ -1,0 +1,187 @@
+/* Reset */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+body {
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #0a0a0a;
+  color: #eee;
+}
+body.dark .navbar {
+  background: rgba(20,20,20,0.7);
+}
+body.dark .card {
+  background: rgba(30,30,30,0.8);
+}
+body.dark .btn {
+  background: #eee;
+  color: #111;
+}
+body.dark .btn:hover {
+  background: #007aff;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 5%;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+.navbar nav a {
+  margin: 0 1rem; text-decoration: none; color: inherit;
+}
+.navbar nav a:hover { color: #007aff; }
+#theme-toggle {
+  background: none; border: none; font-size: 1.2rem; cursor: pointer;
+}
+
+/* Hero with Parallax */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex; justify-content: center; align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.parallax {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  overflow: hidden; z-index: -1;
+}
+.layer {
+  position: absolute; border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(60px);
+}
+.layer1 {
+  width: 400px; height: 400px;
+  background: #007aff;
+  top: 20%; left: 10%;
+}
+.layer2 {
+  width: 300px; height: 300px;
+  background: #ff4081;
+  top: 60%; left: 70%;
+}
+.layer3 {
+  width: 500px; height: 500px;
+  background: #00c853;
+  top: 40%; left: 40%;
+}
+body.dark .layer1 { background: #4dabf7; }
+body.dark .layer2 { background: #f783ac; }
+body.dark .layer3 { background: #69db7c; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.hero span { color: #007aff; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #555; }
+body.dark .hero p { color: #aaa; }
+.btn {
+  padding: 0.8rem 2rem;
+  background: #111; color: #fff; border-radius: 50px;
+  text-decoration: none; transition: 0.3s;
+}
+.btn:hover { transform: scale(1.05); background: #007aff; }
+
+/* Sections */
+section { padding: 6rem 10%; }
+h2 { font-size: 2.2rem; margin-bottom: 2rem; text-align: center; }
+
+/* About */
+.about .content {
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.about img {
+  width: 200px; border-radius: 50%; 
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Projects */
+.projects .grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.card {
+  padding: 2rem; border-radius: 1rem; background: rgba(250,250,250,0.7);
+  backdrop-filter: blur(12px);
+  transition: 0.4s ease;
+  transform: translateY(30px); opacity: 0;
+}
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Skills */
+.skills .icons {
+  display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+}
+.skill {
+  padding: 1rem 2rem; border: 1px solid #ddd; border-radius: 50px;
+  opacity: 0; transform: scale(0.8);
+  transition: 0.4s;
+}
+.skill.show {
+  opacity: 1; transform: scale(1);
+}
+.skill:hover { background: #007aff; color: #fff; }
+
+/* Contact */
+.contact form {
+  max-width: 500px; margin: auto;
+  display: flex; flex-direction: column; gap: 1rem;
+  opacity: 0; transform: translateY(30px);
+  transition: 0.5s ease;
+}
+.contact form.show {
+  opacity: 1; transform: translateY(0);
+}
+.contact input, .contact textarea {
+  padding: 1rem; border: 1px solid #ddd; border-radius: 10px;
+  outline: none; font-size: 1rem;
+}
+.contact button { align-self: flex-start; }
+
+/* Footer */
+footer {
+  text-align: center; padding: 2rem; background: #f5f5f5; color: #666;
+}
+body.dark footer { background: #111; color: #aaa; }
+
+/* Fade-in Animations */
+.fade-in {
+  opacity: 0; transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+.fade-in.delay-1 { animation-delay: 0.5s; }
+.fade-in.delay-2 { animation-delay: 1s; }
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
