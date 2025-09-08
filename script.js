@@ -1,30 +1,26 @@
+
+
+
 // Dark mode toggle
-const toggleBtn = document.getElementById("theme-toggle");
-toggleBtn.addEventListener("click", () => {
+const toggle = document.getElementById("darkToggle");
+toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-// Reveal on scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+// Reveal on scroll with stagger
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+      setTimeout(() => {
+        entry.target.classList.add("show");
+      }, index * 150); // delay
       observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.2 });
 
-// Only observe elements you actually use
-document.querySelectorAll(".reveal, .card, .socials a")
+document.querySelectorAll(".reveal, .card, .skill, .socials a")
   .forEach(el => observer.observe(el));
+
 
