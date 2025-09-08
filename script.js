@@ -15,7 +15,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Reveal on scroll
-// Reveal on scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
