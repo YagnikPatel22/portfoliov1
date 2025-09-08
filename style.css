@@ -80,7 +80,7 @@ footer {
   background: rgba(0,0,0,0.05); margin-top: 3rem;
 }
 
-/* Reveal Animations */
+/* Reveal Animatios */
 .reveal {
   opacity: 0; transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.25,1,0.5,1);
